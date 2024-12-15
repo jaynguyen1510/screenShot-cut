@@ -43,7 +43,7 @@ app.post("/api/user/screenshot", async (req, res) => {
 
           // Nâng `z-index` và đảm bảo phần tử không bị che khuất
           await page.evaluate((element) => {
-            element.style.position = "relative";
+            element.style.position = "absolute";
             element.style.zIndex = "9999";
             element.style.backgroundColor = "white"; // Đảm bảo không trong suốt
             element.scrollIntoView({ behavior: "auto", block: "start" });
