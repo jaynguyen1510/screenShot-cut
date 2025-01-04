@@ -16,12 +16,6 @@ const useCaptureScreenshot = () => {
   // Sử dụng useMutation để thực hiện yêu cầu POST
   const mutation = useMutation({
     mutationFn: screenService, // Dùng function screenService thay vì captureScreenshot trực tiếp
-    onSuccess: (data) => {
-      console.log("Chụp ảnh màn hình thành công:", data);
-    },
-    onError: (error) => {
-      console.error("Lỗi khi chụp ảnh màn hình:", error);
-    },
   });
 
   return mutation;
