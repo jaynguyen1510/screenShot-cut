@@ -3,7 +3,7 @@ import HomePage from "../pages/home.page";
 
 function App() {
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div>
       <HomePage />
       {/* <ScreenshotCellPhoneComponent /> */}
     </div>
