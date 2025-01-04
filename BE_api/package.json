@@ -1,6 +1,7 @@
 {
   "name": "be_api",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "puppeteer": "^23.10.2"
+    "puppeteer": "^23.10.2",
+    "sharp": "^0.33.5"
   }
 }
