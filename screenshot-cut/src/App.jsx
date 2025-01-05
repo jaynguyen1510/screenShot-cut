@@ -1,11 +1,15 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HeaderComponents from "./Components/HeaderComponents/HeaderComponents";
 import ScreenshotCellPhoneComponent from "./Components/ScreenshotCellPhoneComponent/ScreenshotCellPhoneComponent";
 
-function App() {
+export default function App() {
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <ScreenshotCellPhoneComponent />
-    </div>
+    <BrowserRouter>
+      <HeaderComponents /> {/* Component Header sẽ luôn xuất hiện */}
+      <Routes>
+        <Route path="/" element={<ScreenshotCellPhoneComponent />} />
+        {/* Route chính */}
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
