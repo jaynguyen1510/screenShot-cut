@@ -19,6 +19,6 @@ app.use("/api", apiRouter);
 app.use(errorMiddleware);
 
 // Khởi động server
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server đang chạy trên http://localhost:${port}`);
 });
