@@ -21,12 +21,11 @@ app.use("/api", apiRouter);
 // Middleware xử lý lỗi
 app.use(errorMiddleware);
 
-// Cấu hình static files
-app.use(express.static(path.join(__dirname, "../screenshot-cut")));
+app.use(express.static(path.join(__dirname, "../screenshot-cut/build"))); // Cấu hình để phục vụ tệp từ build
 
 // Dịch vụ route cho các trang React (SPA)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../screenshot-cut", "index.html"));
+  res.sendFile(path.join(__dirname, "../screenshot-cut/build", "index.html"));
 });
 
 // Khởi động server
