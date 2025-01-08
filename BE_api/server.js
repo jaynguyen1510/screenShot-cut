@@ -18,10 +18,10 @@ app.use(express.json());
 // Dịch vụ API
 app.use("/api", apiRouter);
 
-app.use(express.static(path.join(__dirname, "/screenshot-cut/dist")));
+app.use(express.static(path.join(__dirname, "screenshot-cut")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "screenshot-cut", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "screenshot-cut", "index.html"));
 });
 
 // Middleware xử lý lỗi
