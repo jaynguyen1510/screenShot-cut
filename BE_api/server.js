@@ -1,34 +1,32 @@
-import "dotenv/config";
 import express from "express";
-import cors from "cors";
 import path from "path";
-import { fileURLToPath } from "url"; // Thêm import này để sử dụng fileURLToPath
+import cors from "cors";
+import "dotenv/config";
 import apiRouter from "./src/routes/api.js"; // Import apiRouter
 import { errorMiddleware } from "./src/middlewares/errorMiddleware.js"; // Import middleware lỗi
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Dùng fileURLToPath để lấy đường dẫn thư mục hiện tại trong ES Module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Lấy __dirname trong ES module
+const __dirname = new URL(".", import.meta.url).pathname;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app's build folder
-app.use(express.static(path.join(__dirname, "build")));
-
-// API Routes
+// Dịch vụ API
 app.use("/api", apiRouter);
 
 // Middleware xử lý lỗi
 app.use(errorMiddleware);
 
-// Catch-all handler to return the React app for any route not found
+// Cấu hình static files
+app.use(express.static(path.join(__dirname, "client", "dist")));
+
+// Dịch vụ route cho các trang React (SPA)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 // Khởi động server
