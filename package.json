@@ -32,5 +32,6 @@
     "build:be": "npm --prefix BE_api install",
     "build:fe": "npm --prefix screenshot-cut install && npm --prefix screenshot-cut run build",
     "build": "npm install && npm run build:be && npm run build:fe"
-  }
+  },
+  "proxy": "https://screenshot-cut.onrender.com"
 }
