@@ -25,8 +25,8 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "start:be": "cross-env PORT=3000 npm --prefix be_api start",
-    "start:fe": "cross-env PORT=5173 npm --prefix screenshot-cut start",
+    "start:be": "npm --prefix be_api start",
+    "start:fe": "npm --prefix screenshot-cut start",
     "start": "npm run dev",
     "dev": "concurrently \"npm run start:be\" \"npm run start:fe\"",
     "build:be": "npm --prefix be_api install",
