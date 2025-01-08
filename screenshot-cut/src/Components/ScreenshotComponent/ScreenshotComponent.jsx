@@ -29,6 +29,7 @@ const ScreenshotComponent = () => {
 
   const handleSelectChange = (e) => {
     const selectOption = e.target.value;
+    setUrl("");
     setSelectOption(selectOption);
   };
   useEffect(() => {
