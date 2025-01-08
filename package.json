@@ -22,6 +22,6 @@
   "scripts": {
     "start:be": "cd be_api && cross-env PORT=3000 npm start",
     "start:fe": "cd screenshot-cut && cross-env PORT=5173 npm start",
-    "start": "concurrently \"cd be_api && cross-env PORT=3000 npm start\" \"cd screenshot-cut && cross-env PORT=5173 npm start\""
+    "start": "concurrently \"cd Be_api && cross-env PORT=3000 npm start\" \"cd screenshot-cut && cross-env PORT=5173 npm start\""
   }
 }
