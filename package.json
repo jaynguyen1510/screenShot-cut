@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "file-saver": "^2.0.5",
-    "jszip": "^3.10.1"
+    "jszip": "^3.10.1",
+    "vite": "^6.0.7"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
