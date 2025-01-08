@@ -25,11 +25,11 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "start:be": "npm --prefix be_api start",
+    "start:be": "npm --prefix BE_api start",
     "start:fe": "npm --prefix screenshot-cut start",
     "start": "npm run dev",
     "dev": "concurrently \"npm run start:be\" \"npm run start:fe\"",
-    "build:be": "npm --prefix be_api install",
+    "build:be": "npm --prefix BE_api install",
     "build:fe": "npm --prefix screenshot-cut install && npm --prefix screenshot-cut run build",
     "build": "npm install && npm run build:be && npm run build:fe"
   }
