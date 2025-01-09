@@ -238,7 +238,7 @@ const ScreenshotComponent = () => {
           <Select
             value={selectOption}
             onChange={handleSelectChange}
-            className="w-full md:w-1/3"
+            className="w-full md:w-1/3 my-2"
           >
             <option value="cellPhoneS">{optionsWeb.cellPhoneS.name}</option>
             <option value="didongviet">{optionsWeb.didongviet.name}</option>
@@ -246,7 +246,7 @@ const ScreenshotComponent = () => {
         </div>
 
         {/* Input URL và Button */}
-        <div className="flex flex-col md:flex-row gap-4 mb-6">
+        <div className="flex flex-col md:flex-row gap-4 mb-2">
           <input
             type="text"
             value={url}
@@ -262,7 +262,12 @@ const ScreenshotComponent = () => {
               ? "Đang Chụp..."
               : "Chụp Màn Hình"}
           </Button>
+
         </div>
+        {/* Error Message */}
+        {errorMessage && (
+          <div className="mb-3 ml-2 text-red-500 font-semibold">{errorMessage}</div>
+        )}
 
         <Button
           onClick={handleDownloadAllImage}
@@ -270,11 +275,6 @@ const ScreenshotComponent = () => {
         >
           Tải Tất Cả Ảnh
         </Button>
-
-        {/* Error Message */}
-        {errorMessage && (
-          <div className="mt-4 text-red-500 font-semibold">{errorMessage}</div>
-        )}
 
         <div className="overflow-x-auto mb-6">
           <table className="table-auto w-full border-collapse border border-gray-300">
